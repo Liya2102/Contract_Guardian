@@ -1,9 +1,23 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from fastapi import FastAPI
+
+from backend.app.api.routes.upload import router as document_router
+from backend.app.api.routes.risk import router as risk_router
+from backend.app.api.routes.drift import router as drift_router
+from backend.app.api.routes.regulation import router as regulation_router
+
 app = FastAPI(
-    title="Contract Guardian API"
+    title="Contract Guardian API",
+    version="1.0.0",
+    description="RAG-powered contract analysis system"
 )
+
+app.include_router(document_router)
+app.include_router(risk_router)
+app.include_router(drift_router)
+app.include_router(regulation_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,3 +32,7 @@ def home():
     return {
         "message": "Contract Guardian Running"
     }
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
