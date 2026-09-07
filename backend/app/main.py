@@ -3,10 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi import FastAPI
 
-from backend.app.api.routes.upload import router as document_router
-from backend.app.api.routes.risk import router as risk_router
-from backend.app.api.routes.drift import router as drift_router
-from backend.app.api.routes.regulation import router as regulation_router
+from app.api.routes.upload import router as document_router
+from app.api.routes.risk import router as risk_router
+from app.api.routes.drift import router as drift_router
+from app.api.routes.regulation import router as regulation_router
+from app.api.routes.health import router as health_router
+from app.api.routes.system import router as system_router
 
 app = FastAPI(
     title="Contract Guardian API",
@@ -18,6 +20,8 @@ app.include_router(document_router)
 app.include_router(risk_router)
 app.include_router(drift_router)
 app.include_router(regulation_router)
+app.include_router(health_router)
+app.include_router(system_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,3 +40,6 @@ def home():
 @app.get("/health")
 def health():
     return {"status": "healthy"}
+from fastapi import FastAPI
+
+
