@@ -1,0 +1,180 @@
+.upload-page {
+  padding: 32px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.upload-header {
+  margin-bottom: 32px;
+}
+
+.upload-header p {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.upload-header h1 {
+  color: #0f172a;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.upload-header span {
+  color: #64748b;
+}
+
+.upload-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.upload-area {
+  background: white;
+  border: 2px dashed #cbd5e1;
+  border-radius: 24px;
+  text-align: center;
+  padding: 60px 30px;
+  transition: 0.3s ease;
+}
+
+.upload-area:hover {
+  border-color: #2563eb;
+}
+
+.upload-icon {
+  width: 90px;
+  height: 90px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.upload-area h2 {
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.upload-area p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.upload-area small {
+  display: block;
+  margin-top: 15px;
+  color: #94a3b8;
+}
+
+.file-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.file-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.file-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pdf-icon {
+  width: 60px;
+  height: 60px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-info h3 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.file-info p {
+  margin-top: 5px;
+  color: #64748b;
+}
+
+.delete-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+.analyze-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.analyze-btn:hover {
+  background: #059669;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.uploading {
+  color: #2563eb;
+}
+
+.success {
+  color: #10b981;
+}
+
+.error {
+  color: #ef4444;
+}

@@ -2,22 +2,31 @@ from fastapi import APIRouter
 from fastapi import UploadFile
 from fastapi import File
 
-router = APIRouter(
-    prefix="/documents",
-    tags=["Documents"]
-)
+from app.services.contract_service import DocumentService
 
-@router.post("/upload")
-async def upload_document(
-        file: UploadFile = File(...)
-):
+import os
 
-    return {
-        "document_id": "DOC001",
-        "filename": file.filename,
-        "status": "uploaded"
-    }
 
+router = APIRouter()
+
+service = DocumentService()
+
+
+@router.post("/upload-pdf")
+async def upload_pdf(file: UploadFile = File(...)):
+
+    upload_dir = "uploads"
+
+    os.makedirs(upload_dir, exist_ok=True)
+
+    file_path = os.path.join(upload_dir, file.filename)
+
+    with open(file_path, "wb") as buffer:
+        buffer.write(await file.read())
+
+    result = service.process_pdf(file_path)
+
+    return result
 
 @router.get("/")
 async def get_documents():

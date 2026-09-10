@@ -1,6 +1,15 @@
 from pydantic import BaseModel
+from typing import List
 
-class DocumentResponse(BaseModel):
+
+class PageData(BaseModel):
+    page: int
+    text: str
+    headings: List[str]
+
+
+class ParsedDocument(BaseModel):
     document_id: str
-    name: str
-    status: str
+    filename: str
+    total_pages: int
+    pages: List[PageData]
